@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Cargar y mostrar imagen.
         this.imageMain.setVisibility(View.VISIBLE);
-        Picasso.get().load(this.url).into(imageMain);
+        Picasso.get().load(this.url).memoryPolicy(MemoryPolicy.NO_CACHE).networkPolicy(NetworkPolicy.NO_CACHE).into(imageMain);
     }
 
     @OnClick(R.id.button_aceptar)
